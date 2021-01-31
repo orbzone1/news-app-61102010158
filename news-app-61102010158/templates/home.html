@@ -1,0 +1,83 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+<body>
+  
+  <section class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">  <!--Section-1-->
+    <div class="align-center container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>CURRENT WEATHER</strong></h1>
+          <p class="mbr-text mbr-fonts-style display-7">
+          
+          <br>
+          <h1 style="color: rgb(210, 206, 200);;"><b>working with openweather api</b></h1>  
+          
+          </p>
+          <p class="mbr-text mbr-fonts-style display-7"><br></p>
+        </div>   
+      </div>
+      <form>
+        <input class="form-control  form-control-lg" name="city" type="text" placeholder="type location here...">
+          <br>
+          <button type="submit" value="Submit" class="btn btn-outline-light btn-lg"> <i class="fa fa-search" aria-hidden="true"></i> <b> Weather Search</b></button>  
+      </form>
+      {% if weather.description == "city not found" %}
+      <br>
+      <h1 style="color:rgb(210, 206, 200);;"><b>404 city not found</b></h1>
+      {% else %}
+      <img src="{{weather.url_icon}}" alt="Weather icon" class="low-width">
+      <h3><i class="fas fa-map-marker-alt"></i> City: <b style="color: #52BE80;">{{weather.city}}, {{weather.country}}</b> &nbsp; <i class="fas fa-cloud-sun-rain"></i> Description: <b style="color: #52BE80;">{{weather.description}}</b></h3>
+      <h2><i class="fas fa-temperature-high"></i> Temperature: <b style="color: #52BE80;">{{weather.temperature}} &#8451</b></h2>
+      <h3><i class="fab fa-cloudscale"></i> Pressure: <b style="color: #52BE80;">{{weather.pressure}} Pascal</b> &nbsp; <i class="fas fa-hand-holding-water"></i> Humidity: <b style="color: #52BE80;">{{weather.humidity}}%</b> &nbsp; <i class="fas fa-wind"></i> Wind: <b style="color: #52BE80;">{{weather.wind}} KM/H</b></h3>
+      {% endif %}
+    </div>
+  </section>
+  <div class="container">
+    <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>COVID-19 NEWS</strong> </h3>
+  </div>
+  <!-- Section 3-->
+    <!--
+      <div class="jumbotron">     
+        <h3 class="mbr-section-title mbr-fonts-style align-left mb-4 display-2"><strong>COVID-19 NEWS</strong> </h3>
+        <p class="lead">didn't find news? Search more </p>
+        <hr class="my-4">
+        <p></p>
+        <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/searchnews" role="button">searchnews</a>
+        </p>
+      </div>
+    -->
+  {% if news == None %}
+
+  <br>
+  <h1 style="color: red;"><b>404 news not found</b></h1>
+  <br>
+  {% else %}
+  
+  {%for i in range(5) %}
+  
+  
+  <div class="jumbotron">
+      <div class="container">
+          <div style="text-align: left;">
+          <h4><i class="far fa-newspaper"></i> News #{{i+1}}: <b><a href="{{news.urlList[i]}}" target="_blank">{{news.titleList[i]}}</a></b></h4> <br>
+          <img src="{{news.urlToImageList[i]}}" alt="NewsImage" class="center"> <br>
+          <hr style="border-top: 1px solid whitesmoke;">
+          <p>{{news.descriptionList[i]}} <a href="{{news.urlList[i]}}" target="_blank">Read more</a></p>
+          </div>
+      </div>
+    </div>
+  
+  {% endfor %}
+  {% endif %}
+  <div class="container">
+    <h4 id="chidright" style="text-align: end;"><a id="scrollToTopBtn" onclick="scrollToTop()">searchnews</a></h4>
+  </div>
+  
+  
+</body>
+
+{% endblock %}
+
+

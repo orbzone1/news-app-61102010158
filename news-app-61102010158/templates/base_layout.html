@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="description" content="">
+  
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='tether.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap-grid.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='bootstrap-reboot.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='dropdownstyle.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='mbr-additional.css') }}">
+  <title>Home</title>
+
+  <style>
+.display-1 {
+  font-family: 'Jost', sans-serif;
+  font-size: 3.8rem;
+  line-height: 1.1;
+}
+form .btn {
+  margin: auto;
+}
+
+
+img, iframe {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+img.low-width{
+    width: 20%;
+}
+
+.mbr-fullscreen {
+    min-height: 50vh;
+}
+.dissplay-2 {
+    font-family: 'Jost', sans-serif;
+    font-size: 3rem;
+    line-height: 1.1;
+    text-align: center;
+}
+.text-wool {
+    color: white;
+}
+a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]) {
+    color: white;
+}
+
+a, a:hover {
+    color: #0066ff;
+}
+.jumbotron{
+    background: #282828;
+}
+
+.cid-s48udlf8KU {
+    opacity: 1;
+    background: rgb(19 21 22);
+}
+body{
+    background-color: rgb(24, 26, 27);
+}
+html section div {
+    background-color: rgb(24, 26, 27);
+}
+.cid-s48OLK6784 .navbar {
+    background-color: rgb(24, 26, 27);
+}
+html section div body{
+    opacity: 1;
+    background-color: rgb(24, 26, 27);
+}
+section{
+    opacity: 1;
+    background: rgb(24 26 27);
+}
+.bg-dark {
+    background-color: #141415!important;
+}
+.chidright{
+    margin-right: auto;
+}
+
+  </style>
+<script>
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn")
+  var rootElement = document.documentElement
+  
+  function scrollToTop() {
+  // Scroll to top logic
+  rootElement.scrollTo({
+  top: 10,
+  behavior: "smooth"
+  })   
+  }
+  scrollToTopBtn.addEventListener("click", scrollToTop)
+  </script>
+</head>
+    
+
+<body>
+        {% include './includes/_navbar.html' %}
+        
+    <div class="vertical-center">
+        <div style="color:#f5f5f5" class="container">
+            <br><br><br>
+            {% block body %}{% endblock %}
+            <br><br><br>
+        </div>
+    </div>
+
+</body>
+
+<footer id="footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <h5>&copy; Copyright 2021 Phuripakorn Sriyod</h5>
+    </div>
+</footer>
+</html>
